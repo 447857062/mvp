@@ -184,6 +184,6 @@ public class TasksPersenter implements TasksContract.Persenter {
     @Override
     public void result(int requestCode, int resultCode) {
         // If a task was successfully added, show snackbar
-
+        //TODO
     }
 }
