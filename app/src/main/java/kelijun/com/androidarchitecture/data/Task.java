@@ -4,6 +4,7 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
 import com.google.common.base.Objects;
+import com.google.common.base.Strings;
 
 import java.util.UUID;
 
@@ -61,6 +62,18 @@ public final class Task {
     }
     public boolean isActive() {
         return !mCompleted;
+    }
+    @Nullable
+    public String getTitleForList() {
+        if (!Strings.isNullOrEmpty(mTitle)) {
+            return mTitle;
+        } else {
+            return mDescription;
+        }
+    }
+    public boolean isEmpty() {
+        return Strings.isNullOrEmpty(mTitle) &&
+                Strings.isNullOrEmpty(mDescription);
     }
     @NonNull
     public String getId() {
